@@ -40,6 +40,7 @@ class CategoryServiceProvider extends ServiceProvider
     {
         $this->publishConfig('category', 'permissions');
         $this->registerBladeCategories();
+        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
     }
 
     /**
