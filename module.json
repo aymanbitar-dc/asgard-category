@@ -1,0 +1,17 @@
+{
+    "name": "Category",
+    "alias": "category",
+    "description": "Category management in AsgardCMS",
+    "version": "1.0.0",
+    "keywords": [],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Category\\Providers\\CategoryServiceProvider",
+        "Modules\\Category\\Providers\\RouteServiceProvider"
+    ],
+    "aliases":{
+        "CategoryWidget": "Modules\\Category\\Blade\\Facades\\CategoryWidget"
+    },
+    "files": []
+}
