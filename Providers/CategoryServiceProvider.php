@@ -2,6 +2,7 @@
 
 namespace Modules\Category\Providers;
 
+use Blade;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Category\Blade\CategoryWidget;
@@ -76,9 +77,8 @@ class CategoryServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->app['blade.compiler']->directive('categories', function ($value) {
+        Blade::directive('categories', function ($value) {
             return "<?php echo CategoryWidget::show([$value]); ?>";
         });
-
     }
 }
