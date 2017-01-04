@@ -18,7 +18,7 @@
 @section('content')
     {!! Form::open(['route' => ['admin.category.category.update', $category->id], 'method' => 'put']) !!}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9">
             <div class="nav-tabs-custom">
                 @include('partials.form-tab-headers')
                 <div class="tab-content">
@@ -36,6 +36,17 @@
                     </div>
                 </div>
             </div> {{-- end nav-tabs-custom --}}
+        </div>
+        <div class="col-md-3">
+            <div class="box box-primary">
+                <div class="box-body">
+                    <div class="form-group {{ $errors->has('namespace') ? 'has-error' : '' }}">
+                        {!! Form::label('namespace', trans('category::categories.namespace')) !!}
+                        {!! Form::select('namespace', $namespaces, old('namespace', $category->namespace) , ['class' => 'selectize']) !!}
+                        {!! $errors->first('namespace', '<span class="help-block">:message</span>') !!}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     {!! Form::close() !!}

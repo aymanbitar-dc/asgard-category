@@ -9,8 +9,8 @@ class UpdateCategoryRequest extends BaseFormRequest
     public function translationRules()
     {
         return [
-            'slug' => 'required',
             'name' => 'required',
+            'slug' => 'required'
         ];
     }
 

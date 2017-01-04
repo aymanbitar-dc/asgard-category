@@ -76,7 +76,9 @@ class CategoryController extends AdminBaseController
      */
     public function edit(Category $category)
     {
-        return view('category::admin.categories.edit', compact('category'));
+        $namespaces = $this->formatNamespaces($this->categoryManager->getNamespaces());
+
+        return view('category::admin.categories.edit', compact('category', 'namespaces'));
     }
 
     /**
